@@ -1,0 +1,59 @@
+.search-menu {
+	display: none;
+	position: absolute;
+	width: 600px; /* Устанавливаем фиксированную ширину */
+	top: 63px;
+	left: 50%; /* Центрируем элемент */
+	transform: translateX(-50%); /* Центрируем элемент по горизонтали */
+	font-size: 24px;
+	font-weight: 600;
+	border-radius: 50px;
+	z-index: 5;
+
+	.search-item {
+		margin-bottom: 2px;
+		background-color: #f0f0f0;
+		padding: 8px;
+		display: flex;
+		justify-content: space-between;
+		border-radius: 8px;
+		
+		.search-text {
+			color: #354536;
+			cursor: pointer;
+		}
+
+		.search-img {
+			cursor: pointer;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.search-menu {
+		width: 100%; /* Для мобильных устройств — 100% ширины */
+		top: 50px;
+		font-size: 16px;
+		padding: 10px 15px;
+		left: 0; /* Сбрасываем центрирование для мобильных */
+		transform: none;
+	}
+
+	.search-item {
+		padding: 8px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.search-menu {
+		width: 480px; /* Увеличиваем ширину для больших экранов */
+		top: 85px;
+		font-size: 32px;
+		left: 50%; /* Центрируем элемент */
+		transform: translateX(-34%);
+	}
+
+	.search-item {
+		padding: 12px;
+	}
+}

@@ -1,0 +1,20 @@
+.table-line {
+	background-color: lightgrey;
+	padding: 33.6px 10px;
+	display: flex;
+	font-size: 24px;
+
+	.table-text:first-child {
+		color: dimgrey;
+		font-weight: 500;
+		margin-right: 8px;
+	}
+
+	#table-text-ip {
+		color: orange;
+	}
+}
+
+.table-line:nth-child(2n) {
+	background-color: #f4f4f4;
+}

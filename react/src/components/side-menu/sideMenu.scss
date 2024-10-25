@@ -1,0 +1,78 @@
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    z-index: 2000; // Увеличен z-index
+    transition: right 0.3s ease;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+
+    /* Скрытие скроллбара для WebKit-браузеров */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Скрытие скроллбара для Firefox */
+    scrollbar-width: none;
+
+    &.open {
+        right: 0;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease; // Плавный переход фона
+
+            /* Добавляем эффект выделения при наведении */
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.3);
+                cursor: pointer;
+            }
+
+            .delete-btn {
+                background: none;
+                border: none;
+                color: rgb(0, 0, 0);
+                font-size: 16px;
+                font-weight: bold; /* Жирный шрифт */
+                margin-left: 10px;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+
+            .delete-btn:hover {
+                color: darkred;
+            }
+        }
+    }
+}

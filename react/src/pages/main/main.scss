@@ -1,0 +1,327 @@
+/* Основные стили для всех устройств */
+.header {
+	height: auto;
+	background-color: #5C815E;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+	margin-bottom: 20px;
+  
+	.header-inner {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  width: 100%;
+	  padding: 0 20px;
+  
+	  .logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+  
+		.logo-text {
+		  font-size: 25px;
+		  color: #f2fbe8;
+		  @media (max-width: 480px) {
+			font-size: 20px; /* Меньший шрифт на мобильных экранах */
+		  }
+		  @media (min-width: 1024px) {
+			font-size: 30px; /* Увеличенный шрифт на больших экранах */
+			margin-left: 10px;
+			margin-top: 20px;
+		  }
+		}
+  
+		.logo-img {
+		  height: 35px;
+		  margin-left: 10px;
+		  @media (max-width: 480px) {
+			height: 25px; /* Уменьшение размера логотипа */
+			margin-left: 5px;
+		  }
+		  @media (min-width: 1024px) {
+			height: 45px; /* Увеличение размера на больших экранах */
+			margin-left: 15px;
+			margin-top: 20px;
+		  }
+		}
+	  }
+  
+	  .search {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 0 auto;
+  
+		.search-input {
+		  width: 100%;
+		  background-color: #aabb97;
+		  border-radius: 50px 0 0 50px;
+		  padding: 15px 20px;
+		  font-size: 16px;
+		  margin-top: 2%;
+		  @media (max-width: 480px) {
+			font-size: 14px;
+			padding: 8px 15px;
+		  }
+		  @media (min-width: 1024px) {
+			width: 500px;
+			font-size: 18px;
+		  }
+		}
+  
+		.search-btn {
+		  background-color: #162517;
+		  padding: 15px 20px;
+		  border-radius: 0 50px 50px 0;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  font-size: 18px;
+		  margin-top: 2%;
+  
+		  @media (max-width: 768px) {
+			padding: 11px 25px;
+			font-size: 16px;
+		  }
+		  @media (max-width: 480px) {
+			padding: 10px 20px;
+			font-size: 14px;
+		  }
+  
+		  .search-img {
+			height: 25px;
+		  }
+		}
+	  }
+	}
+  }
+  
+  /* Для устройств шириной от 768px */
+  @media (min-width: 768px) {
+	.header {
+	  height: 128px;
+  
+	  .header-inner {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 72px;
+  
+		.search {
+		  margin-top: 0;
+		  width: 600px;
+		}
+	  }
+	}
+  }
+  
+  /* Стиль для секции с картой */
+  .section1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  
+	.map {
+	  .map-title {
+		font-size: 20px;
+		margin-bottom: 20px;
+		text-align: center; /* Центрирование заголовка */
+	  }
+  
+	  .map-inner {
+		width: 100%;
+		max-width: 3000px;
+  
+		.map-slide {
+		  height: auto;
+		}
+	  }
+	}
+  
+	.map-section {
+	  width: 100%;
+	  max-width: 1000px;
+	  margin-top: 20px;
+	}
+  }
+  
+  /* Для экранов от 768px */
+  @media (min-width: 768px) {
+	.section1 {
+	  flex-direction: row;
+	  justify-content: space-around;
+  
+	  .map {
+		.map-title {
+		  font-size: 30px; /* Увеличение шрифта на больших экранах */
+		}
+  
+		.map-inner {
+		  max-width: 1400px; /* Для больших экранов */
+		}
+	  }
+  
+	  .map-section {
+		max-width: 600px;
+	  }
+	}
+  }
+  
+  /* Адаптация для мобильных устройств с шириной до 480px */
+  @media (max-width: 480px) {
+	.section1 {
+	  .map {
+		.map-title {
+		  font-size: 18px;
+		  margin-bottom: 8px;
+		}
+  
+		.map-inner {
+		  padding: 0 10px; /* Уменьшение отступов */
+		}
+	  }
+  
+	  .map-section {
+		max-width: 100%;
+	  }
+	}
+  }
+  
+  /* Общие глобальные стили для других секций */
+  body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+  }
+  
+  .container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+  }
+  
+  h1, h2, h3, h4 {
+	margin: 0;
+	padding: 0;
+  }
+  
+  p {
+	margin: 0;
+	padding: 0;
+  }
+  
+  .download-btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 20px 0;
+	border: none;
+	cursor: pointer;
+	transform: translateX(73%);
+	width: 100%;
+	max-width: 600px;
+	font-size: 18px;
+	border-radius: 5px;
+	margin-top: 0px;
+  }
+  
+  .download-btn:hover {
+	background-color: #45a049;
+  }
+  
+  .download-modal {
+	display: block;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.download-modal-content {
+	position: relative; /* Относительное позиционирование для контейнера */
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 600px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.download-modal-body {
+	display: flex;
+	justify-content: center; /* Центрируем кнопки горизонтально */
+	flex-wrap: wrap; /* Если кнопок слишком много, они перенесутся на новую строку */
+	margin-top: 20px; /* Отступ сверху */
+}
+
+.download-modal-body button {
+	margin: 10px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	width: 100px;
+}
+
+.download-modal-body button:hover {
+	background-color: #45a049;
+}
+
+.close {
+	position: absolute; /* Абсолютное позиционирование для кнопки закрытия */
+	top: 5px; /* Отступ сверху */
+	right: 10px; /* Отступ справа */
+	color: #aaa;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+}
+
+.loading-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5); // Полупрозрачный фон
+	z-index: 1000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .loading-spinner {
+	width: 50px;
+	height: 50px;
+	border: 5px solid rgba(255, 255, 255, 0.3);
+	border-top: 5px solid white;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
+  .disabled {
+	pointer-events: none;
+	opacity: 0.5;
+  }
+  

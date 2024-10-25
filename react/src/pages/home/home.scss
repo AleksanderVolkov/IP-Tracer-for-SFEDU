@@ -1,0 +1,460 @@
+.home {
+	background-color: #5c815e;
+	min-height: 100vh;
+	
+	.home-inner {
+	  padding-top: 120px;
+	  max-width: fit-content;
+	  margin: 0 auto;
+	  text-align: center;
+  
+	  .logo {
+		margin-bottom: 40px;
+		max-width: fit-content;
+		margin: 0 auto;
+  
+		.logo-text {
+		  font-size: 80px;
+		  color: #ffffff;
+		}
+  
+		.logo-img {
+		  margin-left: 0;
+		  margin-bottom: -20px;
+		  width: 100px;
+		}
+	  }
+  
+	  .search {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative; /* Относительное позиционирование для родителя */
+  
+		.search-input {
+		  width: 100%;
+		  max-width: 600px;
+		  background-color: #aabb97;
+		  border-radius: 50px 50px 0 0;
+		  padding: 20px;
+		  font-size: 20px;
+		  font-weight: 600;
+		}
+  
+		.search-btn {
+		  background-color: #162517;
+		  padding: 20px 30px;
+		  border-radius: 0 50px 50px 50px;
+		  margin-top: 10px;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+  
+		  .search-img {
+			width: 20px;
+		  }
+		}
+  
+		.search-menu--home {
+		  display: none; 
+		  position: absolute;
+		  width: 100%; /* Ширина совпадает с шириной родителя */
+		  top: calc(100% - 77px); /* Располагаем список ниже .search-input, чуть ниже поля */
+		  left: 0;
+		  font-size: 24px;
+		  font-weight: 600;
+		  border-radius: 50px;
+		  z-index: 5;
+		}
+	  }
+	}
+  }
+  
+  .search-item {
+	margin-bottom: 2px;
+	background-color: #f0f0f0;
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+	border-radius: 8px;
+  
+	.search-text {
+	  color: #354536;
+	  cursor: pointer;
+	  margin-top: 3px;
+	}
+  
+	.search-img {
+	  cursor: pointer;
+	}
+  }
+  
+  @media (max-width: 768px) {
+	.home .search-menu--home {
+	  font-size: 16px;
+	  padding: 0px 0px;
+	  left: 0;
+	  top: calc(100% + 5px); /* Сохраняем относительное положение */
+	}
+  
+	.search-item {
+	  padding: 8px;
+	}
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+	.home .search-menu--home {
+	  width: 100%; /* Делаем ширину 100%, чтобы она совпадала с .search-input */
+	  top: calc(100% + 5px); /* Убедитесь, что список ниже поля */
+	  left: 0;
+	  transform: translateX(0%); /* Отменяем возможные смещения */
+	  font-size: 20px; /* Корректируем шрифт */
+	  padding: 0px 20px;
+	}
+}
+  
+  @media (min-width: 1024px) {
+	.home .search-menu--home {
+	  font-size: 32px;
+	  transform: translateX(0%);
+	  width: 30%;
+	  padding: 0px 20px;
+	}
+  
+	.search-item {
+	  padding: 12px;
+	}
+  }
+  
+  @media (min-width: 768px) {
+	.home {
+	  .home-inner {
+		.logo {
+		  .logo-text {
+			font-size: 150px;
+		  }
+  
+		  .logo-img {
+			width: 120px;
+		  }
+		}
+  
+		.search {
+		  .search-input {
+			font-size: 30px;
+		  }
+		}
+	  }
+	}
+  }
+
+  .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+	position: relative;
+	background-color: #fefefe;
+	margin: 10% auto; /* Центрирование модального окна */
+	padding: 0;
+	border: 1px solid #888;
+	width: 40%;
+	max-width: 600px; /* Ограничение ширины для больших экранов */
+	height: auto; /* Автоматическая высота */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation: animatetop 0.4s;
+  }
+  
+  @keyframes animatetop {
+	from {
+	  top: -300px;
+	  opacity: 0;
+	}
+	to {
+	  top: 0;
+	  opacity: 1;
+	}
+  }
+  
+  .close {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 36px;
+	font-weight: bold;
+	color: white;
+	cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .modal-header {
+	padding: 20px 16px;
+	background-color: hsl(0, 68%, 50%);
+	color: white;
+  }
+  
+  h2 {
+	text-align: center;
+	font-size: 24px; /* Уменьшение шрифта */
+  }
+  
+  .modal-body {
+	padding: 40px 16px;
+	text-align: center;
+  }
+  
+  #modal-error-message {
+	font-size: 18px; 
+	font-weight: bold; 
+	color: #333; 
+	padding: 20px; 
+  }
+  
+  /* Адаптивные стили */
+  @media (max-width: 768px) {
+	.modal-content {
+	  width: 80%; /* Для планшетов и меньших экранов */
+	}
+  
+	h2 {
+	  font-size: 20px; /* Меньший заголовок */
+	}
+  
+	.close {
+	  font-size: 28px; /* Меньший крестик */
+	}
+  
+	#modal-error-message {
+	  font-size: 16px;
+	}
+  }
+  
+  @media (max-width: 480px) {
+	.modal-content {
+	  width: 90%;
+	}
+  
+	h2 {
+	  font-size: 18px;
+	}
+  
+	.close {
+	  font-size: 24px;
+	}
+  
+	.modal-body {
+	  padding: 20px 10px;
+	}
+  
+	#modal-error-message {
+	  font-size: 14px;
+	}
+  }
+  
+  .telegram-icon {
+	margin-top: 10px;
+	width: 40px; /* Начальный размер иконки */
+	height: auto; /* Сохраняем пропорции */
+  }
+
+  @media (min-width: 541px) and (max-width: 767px){
+	.telegram-icon {
+		width: 20px; /* Еще меньше размер иконки */
+		transform: translateX(10px);
+		margin-top: 6px; /* Корректируем отступ сверху */
+	  }
+}
+
+@media (min-width: 541px) and (max-width: 767px) {
+	.telegram-icon {
+	  width: 30px !important; /* Уменьшаем размер иконки */
+	  transform: translateX(20px) !important; /* Корректируем позицию по X */
+	  margin-top: 8px !important; /* Корректируем отступ сверху */
+	}
+  }
+
+  @media (max-width: 344px) {
+	.telegram-icon {
+	  width: 25px; /* Уменьшаем размер иконки */
+	  margin-top: 6px; /* Корректируем отступ сверху */
+	  transform: translateX(-100px); /* Корректируем позицию по X */
+	}
+}
+
+  @media (min-width: 1024px) {
+	.telegram-icon {
+	  width: 20px; /* Уменьшаем размер иконки */
+	  transform: translateX(-170px);
+	  margin-top: 8px; /* Корректируем отступ сверху */
+	}
+}
+
+@media (min-width: 769px) and (max-width: 819px){
+	.telegram-icon {
+		width: 0px;
+		transform: translateX(165px);
+		margin-top: 8px; /* Корректируем отступ сверху */
+	}
+}
+
+/* Стили для экранов шириной до 820px (MacBook Air) */
+@media (min-width: 820px) {
+	.telegram-icon {
+	  width: 35px; /* Уменьшаем размер иконки */
+	  transform: translateX(165px);
+	  margin-top: 8px; /* Корректируем отступ сверху */
+	}
+}
+
+  /* Стили для экранов шириной до 768px */
+  @media (max-width: 768px) {
+	.telegram-icon {
+	  width: 30px; /* Уменьшаем размер иконки */
+	  transform: translateX(165px);
+	  margin-top: 8px; /* Корректируем отступ сверху */
+	}
+  }
+  
+  @media (max-width: 540px) {
+	.telegram-icon {
+	  width: 0px; /* Еще меньше размер иконки */
+	  transform: translateX(20px);
+	  margin-top: 6px; /* Корректируем отступ сверху */
+	}
+  }
+
+  /* Стили для экранов шириной до 480px */
+  @media (max-width: 480px) {
+	.telegram-icon {
+	  width: 0px; /* Еще меньше размер иконки */
+	  transform: translateX(18px);
+	  margin-top: 6px; /* Корректируем отступ сверху */
+	}
+  }
+  
+  .download-btn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 20px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	max-width: 600px;
+	font-size: 18px;
+	border-radius: 5px;
+  }
+  
+  .download-btn:hover {
+	background-color: #45a049;
+  }
+  
+  .download-modal {
+	display: block;
+	position: fixed;
+	z-index: 10;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .download-modal-content {
+	background-color: #fff;
+	margin: 15% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 80%;
+	max-width: 600px;
+	border-radius: 10px;
+  }
+  
+  .download-modal-body button {
+	margin: 10px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: white;
+	border: none;
+	cursor: pointer;
+	width: 100px;
+  }
+  
+  .download-modal-body button:hover {
+	background-color: #45a049;
+  }
+  
+  .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+  }
+  
+  .menu-icon {
+	width: 70px;
+	height: 50px;
+	position: absolute; /* Позволяет перемещать элемент по координатам */
+	top: 15px; /* Опускает элемент на 100px от верхнего края */
+	right: 25px; /* Располагает элемент на 20px от правого края */
+	cursor: pointer;
+  }
+  
+  /* Полная блокировка экрана с затемнением */
+.loading-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);  /* Затемнение */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;  /* Выше всех остальных элементов */
+  }
+  
+  /* Анимация значка загрузки */
+  .loading-spinner {
+	border: 8px solid rgba(255, 255, 255, 0.3);
+	border-top: 8px solid #fff;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	animation: spin 1s linear infinite;
+  }
+  
+  /* Ключевые кадры для анимации вращения */
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
+  /* Заблокировать элементы страницы во время загрузки */
+  .disabled {
+	pointer-events: none;
+	opacity: 0.6;  /* Опционально: затемнить элементы для эффекта */
+  }
+  
+  
